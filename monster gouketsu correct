@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+    long long int M,N,X,Y,T,i,j=0,n=0,temp,ans;
+    scanf("%lld",&T);
+    long long int arr[T];
+    for(i=0;i<T;i++)
+    {
+        scanf("%lld %lld %lld %lld",&M,&N,&X,&Y);
+        while(N>0)
+        {
+            if(X*N<=M)
+            {
+                arr[j]=N;
+                j++;
+                n++;
+                break;
+            }
+            else
+            {
+                N--;
+                M=M+Y;
+            }
+        }
+        if(N=0)
+        {
+            arr[j]=0;
+            j++;
+        }
+    }
+    for(i=0;i<T;i++)
+            printf("%lld\n",arr[i]);
+}
