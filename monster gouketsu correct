@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    long long int M,N,X,Y,T,i,j=0,n=0,temp,ans;
+    long long int M,N,X,Y,T,i,j=0;
     scanf("%lld",&T);
     long long int arr[T];
     for(i=0;i<T;i++)
@@ -13,7 +13,6 @@ int main()
             {
                 arr[j]=N;
                 j++;
-                n++;
                 break;
             }
             else
