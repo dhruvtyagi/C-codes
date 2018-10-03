@@ -17,13 +17,31 @@ int main()
             temp=temp+(N-m)*Y;
             if(X*m<=temp)
             {
-                l++;
+                l=m;
                 arr[i]=m;
+                if(u-l==1)
+                {
+                    if(X*u<=(M+(N-u)*Y))//checking if u is a solution
+                    {
+                        arr[i]=u;
+                        break;
+                    }
+                    else//if u is not then l must be the solution
+                    {
+                        arr[i]=l;
+                        break;
+                    }
+                }
             }
             else
-               u--;
-            if(l>u)
-                break;
+            {
+                u=m;
+                if(l==u)
+                {
+                    arr[i]=l;
+                    break;
+                }
+            }
         }
     }
     for(i=0;i<T;i++)
