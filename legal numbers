@@ -1,0 +1,46 @@
+#include<stdio.h>
+int dig(long long int);
+int main()
+{
+    long long int l,u,t,j,i,sum=0,k=0;
+    scanf("%lld",&t);
+    long long int arr2[t];
+    for(i=0;i<t;i++)
+    {
+        scanf("%lld %lld",&l,&u);
+        sum=0;
+        for(j=l;j<=u;j++)
+        {
+            k=0;
+            long long int temp=j;
+            while(j/1000>0 && temp>0)
+            {
+                int a,b;
+                a=(temp/10)%10;
+                b=temp%10;
+                if(a!=0 && b!=0 && a%2==b%2)
+                    k++;
+                else if(k>2)
+                    break;
+                else
+                    k=0;
+                temp=temp/10;
+            }
+            if(k<=2)
+                sum+=dig(j);
+        }
+        arr2[i]=sum;
+    }
+    for(i=0;i<t;i++)
+        printf("%lld\n",arr2[i]);
+}
+int dig(long long int n)
+{
+    int k=0;
+    while(n)
+    {
+        k+=(n%10);
+        n=n/10;
+    }
+    return k;
+}
