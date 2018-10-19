@@ -32,7 +32,6 @@ int main()
             i=0;
             //first we are gonna check columnwise
                 k=0;//k is basically the parameter that decides whether or not the arrangement will be favourable
-                int temp1=i,temp2=j;
                 for(j=0;j<4;j++)
                 {
                     while(arr[i][j]!='o' && i<4)
